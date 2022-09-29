@@ -12,3 +12,8 @@ Push docker image in docker hub steps:
 3): Enter credentails
 4): Tag docker image: docker tag ImageID(f45) dockerhubImageName(utahir604/shoppingapp) then check: docker images
 5): Push image: docker push imagename(utahir604/shoppingapp:latest)
+
+
+Automate Builds using GitHub and Docker Hub for Shopping.Client Microservice:
+
+1): Go to build section in Dockehub, Link Github Repo (but, it's paid). So find another mechanism
