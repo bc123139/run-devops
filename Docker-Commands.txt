@@ -1,0 +1,6 @@
+
+Build docker image::::
+docker build -t shoppingapp .
+
+Check docker commands:
+Open terminal from vs and type: docker
