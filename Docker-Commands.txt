@@ -4,3 +4,11 @@ docker build -t shoppingapp .
 
 Check docker commands:
 Open terminal from vs and type: docker
+
+
+Push docker image in docker hub steps:
+1):Open terminal from vs
+2): docker login
+3): Enter credentails
+4): Tag docker image: docker tag ImageID(f45) dockerhubImageName(utahir604/shoppingapp) then check: docker images
+5): Push image: docker push imagename(utahir604/shoppingapp:latest)
