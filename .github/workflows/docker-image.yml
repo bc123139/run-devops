@@ -45,7 +45,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: ./Shopping/Shopping.Client/Dockerfile
+          context: Shopping
+          file: Shopping/Shopping.Client/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/shoppingapp:latest, ${{ secrets.DOCKERHUB_USERNAME }}/shoppingapp:${{ github.run_number }}
