@@ -17,3 +17,7 @@ Push docker image in docker hub steps:
 Automate Builds using GitHub and Docker Hub for Shopping.Client Microservice:
 
 1): Go to build section in Dockehub, Link Github Repo (but, it's paid). So find another mechanism
+2): Specify branch
+3): Docker file path: Shopping/Shopping.Client/Dockerfile
+4): Go to your project github settings and dockerhub username and token, token will be generate from dockerhub settings(security)
+Security token: dckr_pat_WhpRT9Wzo2EIyHwMe89pdQ7eSMU
