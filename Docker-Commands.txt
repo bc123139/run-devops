@@ -26,3 +26,19 @@ Run Mongo docker container:
 
 docker run -d -p 27017:27017 --name shopping-mongo mongo
 docker exec -it shopping-mongo /bin/bash
+
+Check mongo folders command:
+ls
+
+To run mongo commands:
+mongo
+Create new db command:
+use CatalogDb
+create collection command:
+db.createCollection('Products')
+insert record in Products collection command:
+db.Products.insertMany([{ 'Name':'Asus Laptop','Category':'Computers', 'Summary':'Summary', 'Description':'Description', 'ImageFile':'ImageFile', 'Price':54.93 }, { 'Name':'HP Laptop','Category':'Computers', 'Summary':'Summary', 'Description':'Description', 'ImageFile':'ImageFile', 'Price':88.93 } ])
+get records from Products collection command:
+db.Products.find({}).pretty()
+delete records from Products collection command:
+db.Products.remove({})
