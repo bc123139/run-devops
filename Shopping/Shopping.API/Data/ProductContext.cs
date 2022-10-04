@@ -1,12 +1,34 @@
-﻿using Shopping.API.Models;
+﻿using MongoDB.Driver;
+using Shopping.API.Models;
 
 namespace Shopping.API.Data
 {
-    public static class ProductContext
+    public class ProductContext
     {
-        public static List<Product> Products=new List<Product>
+        public ProductContext(IConfiguration configuration)
         {
-           
+            var client = new MongoClient(configuration["DatabaseSettings:ConnectionString"]);
+            var database = client.GetDatabase(configuration["DatabaseSettings:DatabaseName"]);
+
+            Products = database.GetCollection<Product>(configuration["DatabaseSettings:CollectionName"]);
+            SeedData(Products);
+        }
+
+        public IMongoCollection<Product> Products { get; }
+
+        private static void SeedData(IMongoCollection<Product> productCollection)
+        {
+            bool existProduct = productCollection.Find(p => true).Any();
+            if (!existProduct)
+            {
+                productCollection.InsertManyAsync(GetPreconfiguredProducts());
+            }
+        }
+
+        private static IEnumerable<Product> GetPreconfiguredProducts()
+        {
+            return new List<Product>()
+            {
                 new Product()
                 {
                     Name = "IPhone X",
@@ -49,13 +71,14 @@ namespace Shopping.API.Data
                 },
                 new Product()
                 {
-                    Name = "LG G7 ThinQ",
+                    Name = "LG G7 ThinQ EndofCourse",
                     Description = "This phone is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
                     ImageFile = "product-6.png",
                     Price = 240.00M,
                     Category = "Home Kitchen"
                 }
             };
+        }
     }
     
 }
