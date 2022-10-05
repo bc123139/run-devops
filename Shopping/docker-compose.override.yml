@@ -5,13 +5,13 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+      - "8000:80"
 
   shopping.client:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+      - "8001:80"
 
   shopping.db:
     container_name: shoppingdb
