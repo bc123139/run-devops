@@ -45,3 +45,5 @@ db.Products.remove({})
 
 Run docker compose file:
 docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+Stop all containers which are part of docker compose file:
+docker-compose -f docker-compose.yml -f docker-compose.override.yml down
