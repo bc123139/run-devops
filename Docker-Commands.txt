@@ -42,3 +42,6 @@ get records from Products collection command:
 db.Products.find({}).pretty()
 delete records from Products collection command:
 db.Products.remove({})
+
+Run docker compose file:
+docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
