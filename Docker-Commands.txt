@@ -47,3 +47,12 @@ Run docker compose file:
 docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
 Stop all containers which are part of docker compose file:
 docker-compose -f docker-compose.yml -f docker-compose.override.yml down
+
+
+Create Pods on Kubernetes in Imperative way:
+
+kubectl run swn-nginx --image=nginx (Comment: swn-nginx is a pod name) 
+check pod: kubectl get all
+port forwarding: kubectl port-forward swn-nginx 8080:80
+Note imperative way run only for 1 time, if any new operation occurs 
+Delete pod: kubectl delete pod swn-nginx
