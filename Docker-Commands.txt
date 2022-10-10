@@ -56,3 +56,9 @@ check pod: kubectl get all
 port forwarding: kubectl port-forward swn-nginx 8080:80
 Note imperative way run only for 1 time, if any new operation occurs 
 Delete pod: kubectl delete pod swn-nginx
+
+Creating Deployment on Kubernetes:
+kubectl create
+kubectl create deployment nginx-depl --image=nginx
+kubectl get deployment
+kubectl get all
