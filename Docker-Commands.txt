@@ -62,3 +62,16 @@ kubectl create
 kubectl create deployment nginx-depl --image=nginx
 kubectl get deployment
 kubectl get all
+kubectl edit deployment nginx-depl
+
+Troubleshooting on Kubernetes:-
+kubectl logs nginx-depl-c88549479-l4vs2
+Create mongo deployment:
+kubectl create deployment mongo-depl --image=mongo
+kubectl get pod
+kubectl describe pod mongo-depl-8fbdb868c-6jgjv
+kubectl get all
+kubectl get deployment
+kubectl delete deployment mongo-depl
+kubectl delete deployment nginx-depl
+kubectl get all
