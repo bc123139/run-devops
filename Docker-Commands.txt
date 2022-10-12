@@ -75,3 +75,12 @@ kubectl get deployment
 kubectl delete deployment mongo-depl
 kubectl delete deployment nginx-depl
 kubectl get all
+
+
+Deploying Kubernetes WebUI Dashboard:
+Link: https://github.com/kubernetes/dashboard
+
+Steps:
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+kubectl describe secret -n kube-system
+kubectl describe secret -n kube-system
