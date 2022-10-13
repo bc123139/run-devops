@@ -84,3 +84,23 @@ Steps:
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 kubectl describe secret -n kube-system
 kubectl describe secret -n kube-system
+
+
+Create Secret For Mongo Db Admin Root Username and Password:
+steps:
+cd k8s
+kubectl apply -f .\mongo-secret.yaml
+kubectl get secret
+
+Use K8s Secret Values in Mongo Deployment yaml file:
+steps:
+kubectl apply -f .\mongo.yaml
+kubectl get pod --watch
+kubectl get all (deployment defintion, replicaset, pod definition)
+
+Create K8s Service Definitions for Mongo Db:
+Steps:
+kubectl apply -f .\mongo.yaml
+kubectl get service
+kubectl describe service mongo-service
+kubectl get pod
