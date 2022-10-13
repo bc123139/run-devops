@@ -104,3 +104,4 @@ kubectl apply -f .\mongo.yaml
 kubectl get service
 kubectl describe service mongo-service
 kubectl get pod
+kubectl get pod mongo-deployment-5d456c788f-9nswl -o wide
