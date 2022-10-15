@@ -109,3 +109,15 @@ kubectl get pod mongo-deployment-5d456c788f-9nswl -o wide
 
 Remove image from docker:
  docker rmi imageid -f
+ 
+Testing Shopping.API yaml file on k8s:
+cd .\k8s\
+kubectl apply -f .\shoppingapi.yaml
+kubectl get all
+kubectl get service
+mongodb://username:password@mongo-service:27017
+kubectl apply -f .\shoppingapi.yaml
+kubectl apply -f .\mongo-configmap.yaml
+kubectl get cm
+kubectl apply -f .\shoppingapi.yaml
+kubectl get pod
