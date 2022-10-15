@@ -105,3 +105,7 @@ kubectl get service
 kubectl describe service mongo-service
 kubectl get pod
 kubectl get pod mongo-deployment-5d456c788f-9nswl -o wide
+
+
+Remove image from docker:
+ docker rmi imageid -f
