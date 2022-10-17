@@ -121,3 +121,7 @@ kubectl apply -f .\mongo-configmap.yaml
 kubectl get cm
 kubectl apply -f .\shoppingapi.yaml
 kubectl get pod
+
+Prepare Shopping Microservices for Azure Kubernetes Service (AKS):
+kubectl config get-contexts
+kubectl config current-context
