@@ -125,3 +125,12 @@ kubectl get pod
 Prepare Shopping Microservices for Azure Kubernetes Service (AKS):
 kubectl config get-contexts
 kubectl config current-context
+
+
+Deploy and use azure container registry:
+
+check azure cli version: az --version
+az login
+az group create --name aksresourcegroup --location westeurope
+az acr create --resource-group aksresourcegroup --name aspnetshoppingacr --sku basic
+az acr update -n aspnetshoppingacr --admin-enabled true
