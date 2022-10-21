@@ -166,3 +166,8 @@ kubectl get contexts
 To verify:
 kubectl get all
 kubectl get nodes
+
+Create Image Pull Secret for ACR Container:
+
+kubectl create secret docker-registry acr-secret --docker-server=aspnetshoppingacr.azurecr.io --docker-username=aspnetshoppingacr --docker-password=PvGz14sG0h8Qd2R+B3fe0j4OE621H=Dd --docker-email=usman.tahir@synergy-it.com
+kubectl get secret
