@@ -154,3 +154,15 @@ az acr repository show-tags --name aspnetshoppingacr --repository shoppingclient
 
 Create AKS cluster with attaching ACR
 az aks create --resource-group aksresourcegroup --name aspnetAKSCluster --node-count 1 --generate-ssh-keys --attach-acr aspnetshoppingacr
+
+--
+Install the Kubernetes CLI
+az aks install-cli
+
+Connect to cluster using kubectl
+az aks get-credentials --resource-group aksresourcegroup --name aspnetAKSCluster
+kubectl get contexts
+
+To verify:
+kubectl get all
+kubectl get nodes
