@@ -17,9 +17,7 @@ spec:
       containers:
         - name: shoppingclient
           image: aspnetshoppingacr.azurecr.io/shoppingclient:v1
-          imagePullPolicy: IfNotPresent
-          imagePullSecrets:
-            -name: acr-secret           
+          imagePullPolicy: IfNotPresent         
           ports:
             - containerPort: 80
           env:

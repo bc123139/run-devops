@@ -171,3 +171,11 @@ Create Image Pull Secret for ACR Container:
 
 kubectl create secret docker-registry acr-secret --docker-server=aspnetshoppingacr.azurecr.io --docker-username=aspnetshoppingacr --docker-password=PvGz14sG0h8Qd2R+B3fe0j4OE621H=Dd --docker-email=usman.tahir@synergy-it.com
 kubectl get secret
+
+Run K8s Manifest Yaml Files For Deploying AKS:
+kubectl config get-contexts
+kubectl config current-context
+kubectl get all
+kubectl apply -f .\aks\
+kubectl get all
+kubectl get svc
