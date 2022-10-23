@@ -179,3 +179,6 @@ kubectl get all
 kubectl apply -f .\aks\
 kubectl get all
 kubectl get svc
+
+Autoscale Shopping Pods in Azure Kubernetes Service (AKS):
+kubectl get hpa
