@@ -182,3 +182,11 @@ kubectl get svc
 
 Autoscale Shopping Pods in Azure Kubernetes Service (AKS):
 kubectl get hpa
+
+
+Delte 
+Update Shopping Microservices With Zero-Downtime Deployment on Live AKS:
+Delete docker image: (shopping client)
+docker rmi f45007b0bafb -f
+cd .\shopping\
+docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
