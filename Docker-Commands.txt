@@ -190,3 +190,17 @@ Delete docker image: (shopping client)
 docker rmi f45007b0bafb -f
 cd .\shopping\
 docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+
+
+Tag and Push the New Version of Shopping.Client Image to ACR:
+az acr list --resource-group aksresourcegroup --query "[].{acrLoginServer:loginServer}" --output table
+Generated: aspnetshoppingacr.azurecr.io
+docker tag shoppingclient:latest aspnetshoppingacr.azurecr.io/shoppingclient:v2
+az acr login --name aspnetshoppingacr
+docker push aspnetshoppingacr.azurecr.io/shoppingclient:v2
+
+List images in registry
+az acr repository list --name aspnetshoppingacr --output table
+
+See tags
+az acr repository show-tags --name aspnetshoppingacr --repository shoppingclient --output table
