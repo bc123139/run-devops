@@ -14,7 +14,7 @@ services:
   shopping.client:
     container_name: shoppingclient
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Development 
       - "ShoppingAPIUrl=http://shoppingapi"
     depends_on:
       - shopping.db
@@ -29,4 +29,3 @@ services:
       - "27017:27017"
     volumes:
       - ${WEBAPP_STORAGE_HOME}/site:/data/db
-

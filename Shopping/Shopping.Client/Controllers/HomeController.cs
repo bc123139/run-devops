@@ -22,7 +22,16 @@ namespace Shopping.Client.Controllers
             var response = await _httpClient.GetAsync("product");
             var content = await response.Content.ReadAsStringAsync();
             var productList = JsonConvert.DeserializeObject<IEnumerable<Product>>(content);
-
+            if(productList == null)
+            {
+                productList = new List<Product>()
+                {
+                    new Product
+                    {
+                        Description="Api doesnot call"
+                    }
+                };
+            }
             return View(productList);
         }
 

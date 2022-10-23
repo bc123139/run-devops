@@ -204,3 +204,8 @@ az acr repository list --name aspnetshoppingacr --output table
 
 See tags
 az acr repository show-tags --name aspnetshoppingacr --repository shoppingclient --output table
+
+
+Deploy v2 of Shopping.Client Microservices to AKS with zero-downtime rollout k8s:
+kubectl apply -f .\aks\
+kubectl get pod --watch
